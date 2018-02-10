@@ -1,0 +1,35 @@
+digraph questions {
+	overlap=false
+	goal [label="What is the amount
+of rates subsidy a
+person is entitled to?" color=lightgreen style=filled]
+	goal [label="What is the amount
+of rates subsidy a
+person is entitled to?"]
+	goal -> dependants
+	goal -> current_rate
+	goal -> income
+	goal -> is_qualified
+	is_qualified [label="you are qualified to recieve a subsidy"]
+	is_qualified -> is_ratepayer
+	is_qualified -> is_living_in_house
+	is_qualified -> is_residential
+	is_ratepayer [label="Are you a ratepayer?"]
+	is_living_in_house [label="Are you living in the house?"]
+	is_residential [label="Is the house residential?"]
+	dependants [label="What is the number of dependants the ratepayer has?"]
+	dependants -> dependants_children
+	dependants -> dependants_relatives
+	current_rate [label="What is the amount of rates?"]
+	income_household [label="What is the joint homeowner's taxable income"]
+	income [label="What is your ratepayers income?"]
+	income -> income_joint
+	income -> income_personal
+	income -> income_household
+	income_joint [label="What is the ratepayer's taxable income?"]
+	income_personal [label="What is the spouse/partner's income?"]
+	income_personal -> income_spouse
+	income_spouse [label="Is there a spouse/partner ordinarily resident?"]
+	dependants_children [label="What is the number of dependent children the ratepayer has?"]
+	dependants_relatives [label="What is the number of dependant relatives the ratepayer has?"]
+}
